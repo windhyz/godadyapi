@@ -2,12 +2,15 @@
 
 ### 1、说明
 <pre><code>
+将godaddy账号对应该key的值填写到include.py中的KEYDICT
+将godaddy账号对应该secret的值填写到include.py中的SECRETDICT
 </code></pre>
 ### 2、要求
 <pre><code>
 python 2.7
+requests
 
-这些包都可以通过pip install 来安装
+requests包都可以通过pip install 来安装
 </code></pre>
 ### 3、在开发过程中使用虚拟环境来安装
 <pre><code>

@@ -19,4 +19,9 @@ requests包都可以通过pip install 来安装
 这样，我们就得到了一个不带任何第三方包的“干净”的Python运行环境。
 virtualenv可以通过pip 来安装
 </code></pre>
-### 4、还没有完善，将会慢慢完善。
+### 4、godaddyapi 可以查询账号下的单个域名信息和账号下的所有域名信息,并输出到文件。
+1、单个域名
+python godaddydomain.py -H api.godaddy.com -i your_godaddy_acount -d search_domain -n -s -t -e -N -o test.txt
+2、账号下所有域名
+python godaddydomain.py -H api.godaddy.com -i your_godaddy_acount -n -s -t -e -N -o test.txt
+### 5、还没有完善，将会慢慢完善。

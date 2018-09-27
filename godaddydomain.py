@@ -16,44 +16,48 @@ except KeyboardInterrupt:
 if __name__ == "__main__":
 
     #keydict = KEYDICT
-    arglist = []
+    #arglist = []
     opts = Options()
     parser = opts.parse_command()
     args = parser.parse_args()
-    print(args)
-    if args.status:
-        arglist.append(args.status)
-    if args.domain:
-        arglist.append(args.domain)
-    if args.creatat:
-        arglist.append(args.creatat)
-    if args.expires:
-        arglist.append(args.expires)
-    if args.renewAuto:
-        arglist.append(args.renewAuto)
+    #print(args)
     if args.countid:
-        arglist.append(args.countid)
+        pass
     else:
         print("please input your godaddy acount")
         exit(0)
     if args.host:
-        arglist.append(args.host)
+        pass
     else:
         print("please input godday api domain")
+        exit(0)
+    #if args.status:
+    #    arglist.append(args.status)
+    #if args.domain:
+    #    arglist.append(args.domain)
+    #if args.creatat:
+    #    arglist.append(args.creatat)
+    #if args.expires:
+    #    arglist.append(args.expires)
+    #if args.renewAuto:
+    #    arglist.append(args.renewAuto)
+    #if args.outfile:
+    #    arglist.append(args.outfile)
+    #if args.nameserver:
+    #    arglist.append(args.nameserver)
 
-    print(arglist)
-    godaddyid = arglist[0]
-    host = arglist[1]
     url = URL
-    print(arglist)
-    print(url)
-    if godaddyid in KEYDICT:
-        dodaddykey = KEYDICT[godaddyid]
-    if godaddyid in SECRETDICT:
-        godaddysecret = SECRETDICT[godaddyid]
+    #print(arglist)
+    #if godaddyid in KEYDICT:
+    #    dodaddykey = KEYDICT[godaddyid]
+    #if godaddyid in SECRETDICT:
+    #    godaddysecret = SECRETDICT[godaddyid]
 
-    gddomain = DodaddyDomain(godaddyid, dodaddykey, godaddysecret, url, host)
-    gddomain.alldomaininfo()
+    gddomain = DodaddyDomain(args, url)
+    if args.domain:
+        gddomain.getOneDomaininfo(args.domain)
+    else:
+        gddomain.alldomaininfo()
 
 
 
